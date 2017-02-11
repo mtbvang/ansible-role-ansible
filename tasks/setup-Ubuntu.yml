@@ -1,6 +1,7 @@
 ---
 - name: Add ansible repository.
   apt_repository: repo='ppa:ansible/ansible'
+  environment: "{{ ansible_proxy_env }}"
 
 - name: Update apt cache.
   apt: update_cache=yes cache_valid_time=86400
